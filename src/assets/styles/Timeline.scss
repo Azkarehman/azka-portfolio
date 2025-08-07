@@ -1,4 +1,5 @@
-// Enhanced Timeline Styles - Add this to your Timeline.scss
+// Import premium fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 .timeline-section {
   background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
@@ -39,6 +40,7 @@
   margin-bottom: 60px;
   
   h1 {
+    font-family: 'Inter', sans-serif;
     font-size: 3.5rem;
     font-weight: 800;
     background: linear-gradient(135deg, #5000ca, #667eea, #f093fb);
@@ -52,6 +54,7 @@
   }
 
   .section-subtitle {
+    font-family: 'Inter', sans-serif;
     font-size: 1.3rem;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 300;
@@ -70,6 +73,7 @@
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
+    padding: 30px !important;
     
     &::before {
       content: '';
@@ -94,77 +98,113 @@
   100% { transform: translateX(100%); }
 }
 
+// Date Badge (now inside cards)
+.date-badge {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+}
+
 .timeline-title {
-  font-size: 1.8rem !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 2rem !important;
   font-weight: 700 !important;
   margin-bottom: 8px !important;
+  margin-top: 15px !important;
   color: white !important;
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: -0.5px;
 }
 
 .timeline-company {
+  font-family: 'Inter', sans-serif !important;
   font-size: 1.1rem !important;
   font-weight: 500 !important;
-  margin-bottom: 20px !important;
-  color: rgba(255, 255, 255, 0.9) !important;
+  margin-bottom: 25px !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   display: flex;
   align-items: center;
+  letter-spacing: 0.3px;
   
   &::before {
     content: '🏢';
-    margin-right: 8px;
+    margin-right: 10px;
     font-size: 1rem;
+    filter: grayscale(0.3);
   }
 }
 
 .timeline-description {
   .intro-text {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+    line-height: 1.7;
     color: rgba(255, 255, 255, 0.95);
     font-weight: 400;
-  }
-
-  .bullet-points {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-
-    li {
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 16px;
-      color: rgba(255, 255, 255, 0.9);
-      padding: 10px 0;
-      border-left: 3px solid rgba(255, 255, 255, 0.2);
-      padding-left: 18px;
-      margin-left: 10px;
-      transition: all 0.3s ease;
-
-      &:hover {
-        border-left-color: rgba(255, 255, 255, 0.6);
-        transform: translateX(5px);
-        color: white;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+    letter-spacing: 0.2px;
+    
+    .highlight {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      color: #ffffff;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
   }
-}
 
-// Enhanced date styling
-.date-style {
-  color: #f093fb !important;
-  font-weight: 600 !important;
-  font-size: 1.1rem !important;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  background: rgba(0,0,0,0.2);
-  padding: 8px 16px;
-  border-radius: 25px;
-  backdrop-filter: blur(10px);
+  .expertise-grid {
+    display: grid;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .expertise-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateX(5px);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .expertise-icon {
+      font-size: 1.3rem;
+      margin-right: 15px;
+      margin-top: 2px;
+      min-width: 30px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+
+    .expertise-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
+  }
 }
 
 // Enhanced timeline line
@@ -180,8 +220,37 @@
   50% { box-shadow: 0 0 30px rgba(80, 0, 202, 0.8); }
 }
 
+// Icon enhancements
+.vertical-timeline-element-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 4px solid rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    transform: scale(1.15) rotate(5deg);
+    border-color: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  svg {
+    font-size: 1.3rem !important;
+  }
+}
+
 // Responsive Design
 @media screen and (max-width: 768px) {
+  .modern-card .vertical-timeline-element-content {
+    padding: 25px !important;
+  }
+  
+  .date-badge {
+    position: static;
+    margin-bottom: 15px;
+    display: inline-block;
+    font-size: 0.8rem;
+  }
+  
   .section-header {
     h1 {
       font-size: 2.5rem;
@@ -193,32 +262,20 @@
   }
 
   .timeline-title {
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
   }
 
   .timeline-company {
     font-size: 1rem !important;
   }
 
-  .timeline-description .bullet-points li {
+  .expertise-item .expertise-text {
     font-size: 0.95rem;
   }
 }
 
-// Icon enhancements
-.vertical-timeline-element-icon {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border: 4px solid rgba(255, 255, 255, 0.2) !important;
-  transition: all 0.3s ease !important;
-
-  &:hover {
-    transform: scale(1.3) rotate(10deg);
-    border-color: rgba(255, 255, 255, 0.4) !important;
-  }
-
-  svg {
-    font-size: 1.2rem !important;
+@media screen and (max-width: 480px) {
+  .modern-card .vertical-timeline-element-content {
+    padding: 20px !important;
   }
 }
