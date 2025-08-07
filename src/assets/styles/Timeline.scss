@@ -119,9 +119,9 @@
 .timeline-title {
   font-family: 'Inter', sans-serif !important;
   font-size: 2rem !important;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   margin-bottom: 8px !important;
-  margin-top: 15px !important;
+  margin-top: 35px !important;
   color: white !important;
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   letter-spacing: -0.5px;
@@ -129,18 +129,16 @@
 
 .timeline-company {
   font-family: 'Inter', sans-serif !important;
-  font-size: 1.1rem !important;
-  font-weight: 500 !important;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
   margin-bottom: 25px !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  display: flex;
-  align-items: center;
+  color: rgba(255, 255, 255, 0.75) !important;
   letter-spacing: 0.3px;
   
   &::before {
-    content: '🏢';
+    // content: '🏢';
     margin-right: 10px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     filter: grayscale(0.3);
   }
 }
@@ -186,14 +184,6 @@
       background: rgba(255, 255, 255, 0.12);
       transform: translateX(5px);
       border-color: rgba(255, 255, 255, 0.25);
-    }
-
-    .expertise-icon {
-      font-size: 1.3rem;
-      margin-right: 15px;
-      margin-top: 2px;
-      min-width: 30px;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
     }
 
     .expertise-text {
